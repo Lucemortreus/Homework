@@ -28,6 +28,6 @@ public class PhoneBook {
         phoneBook.addContact("654321", "Седов");
         phoneBook.addContact("321456", "Бегунов");
 
-        System.out.println(phoneBook.getPhones("Иванов"));
+        System.out.println(phoneBook.getPhones("Седов"));
     }
 }
