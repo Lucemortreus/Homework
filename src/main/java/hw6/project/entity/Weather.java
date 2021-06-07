@@ -38,10 +38,9 @@ public class Weather {
 
     @Override
     public String toString() {
-        return "Weather{" +
-                "cityName='" + cityName + '\'' +
-                ", weatherText='" + weatherText + '\'' +
-                ", degrees=" + degrees +
-                '}';
+        return "Погода: " +
+                "Сегодня, в городе " + cityName +
+                ", погодные условия - " + weatherText +
+                ", количество градусов - " + degrees;
     }
 }
