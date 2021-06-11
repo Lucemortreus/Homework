@@ -2,10 +2,7 @@ package hw6.project;
 
 import hw6.project.entity.Weather;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class DataBaseRepository {
     private static final String DB_URL = "jdbc:sqlite:geekbrains.db";
@@ -34,5 +31,17 @@ public class DataBaseRepository {
 
     public void getSavedWeather() {
         //TODO: написать метод, который достанет из базы все записи о погоде и выведет пользователю
+        Connection connection = null;
+        Statement statement = null;
+        PreparedStatement preparedStatement = null;
+
+        ResultSet resultSet = statement.executeQuery("select * from weather");
+
+        while (resultSet.next()) {
+            System.out.print(resultSet.getString("city_name") + ",");
+            System.out.print(resultSet.getString("weather_text"));
+            System.out.print(resultSet.getInt("degrees"));
+        }
+        System.out.println(count);
     }
 }
